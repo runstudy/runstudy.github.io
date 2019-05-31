@@ -4,12 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="美国为什么这么强大?, 瓦尔登湖">
+    <meta name="keywords" content="博客搭建进阶, 瓦尔登湖">
     <meta name="description" content="
-一个政府的员工如果都是临时工，证明这个政府只是临时政府。一个国家对临时工的态度，不仅仅可以反映这个国家的体制是否先 进，还可以从深处反映一个国家的良心。
-
-
-在美国肯斯尼州军用机场，曾经有一位修理工，他叫伊迪尔特，毕业于肯斯尼州工业学院，">
+让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffold">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>美国为什么这么强大? | 瓦尔登湖</title>
+    <title>博客搭建进阶 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -214,13 +211,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        美国为什么这么强大?
+                        博客搭建进阶
                     </div>
                 </div>
             </div>
@@ -329,13 +326,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/转载/" target="_blank">
-                                <span class="chip bg-color">转载</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -343,8 +336,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/杂谈/" class="post-category" target="_blank">
-                                杂谈
+                            <a href="/categories/娱乐/" class="post-category" target="_blank">
+                                娱乐
                             </a>
                         
                     </div>
@@ -355,21 +348,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-28
+                    2019-05-31
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        922
+                        173
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                     
                 
@@ -381,21 +374,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<p><strong>一个政府的员工如果都是临时工，证明这个政府只是临时政府。一个国家对临时工的态度，不仅仅可以反映这个国家的体制是否先 进，还可以从深处反映一个国家的良心。</strong></p>
+<h3 id="让每个新建的文章都自动添加-Front-matter"><a href="#让每个新建的文章都自动添加-Front-matter" class="headerlink" title="让每个新建的文章都自动添加 Front-matter"></a><strong>让每个新建的文章都自动添加 Front-matter</strong></h3><p>每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">author: &#123;&#123; author &#125;&#125;</span><br><span class="line">tags: &#123;&#123; tags &#125;&#125;</span><br><span class="line">categories: &#123;&#123; categories &#125;&#125;</span><br><span class="line">img: &#123;&#123; img &#125;&#125;</span><br><span class="line">top: &#123;&#123; top &#125;&#125;</span><br><span class="line">password: &#123;&#123; password &#125;&#125;</span><br><span class="line">summary: &#123;&#123; summary &#125;&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>之后再创建文章时，文章上方会自动添加这些字段</p>
 <hr>
-<a id="more"></a>
-<p>在美国肯斯尼州军用机场，曾经有一位修理工，他叫伊迪尔特，毕业于肯斯尼州工业学院，是笔者的朋友，他曾经给我讲过这么一个自己亲身经历的故事。</p>
-<p>那年，伊迪尔特刚从学院毕业，在肯斯尼州军用机场找到了一份清洗直升机内部的工作，由于工作经验不足够，他仅被聘用为临时工，然而，他刚刚上任没多久，就似乎摊上了大事。</p>
-<p>一天，伊迪尔特由于早上耽误了太多时间，忙碌之中把早餐都带进了工作地点。而且这天的工作量特别重，他不得不一边工作一边 吃早餐。他娴熟地拆开直升机后盖，将处于后部的SM69式升直器零件取出，一只手卸下螺丝钉，准备用小刷清除内部的灰尘，另一只手还端着一杯咖啡在喝，突然，吹过一阵寒风，伊迪尔特打了一个大喷嚏，一整杯咖啡都洒在直升机的升直器零件上，霎时间就 冒出了黑烟。伊迪尔特大吃一惊，早知道，一个高端的直升机所有的零件都是特别制作的，一旦坏了一点，整个飞机就算报废了！ 一架精密的直升机造价大约1.8亿美金，这样的负担，他承受不起。</p>
-<p>伊迪尔特慌慌张张，不知所措，但他还是将这件事告诉了直属上级克林斯曼准将。本以为克林斯曼准将立刻会大发雷霆，谁知，他只是吃了一惊，并陪同他去检查情况。</p>
-<p>一路上，伊迪尔特紧张地问克林斯曼准将：“我的工作是不是丢了？是不是要赔很多钱？”克林斯曼准将却回答说：“不，你只不过就是个临时工，是不必承担责任的！”</p>
-<p>果然，事后军方官员经过商讨会议，确认了这次事故的责任，将责任完全归咎于机场官方的疏忽。因为：第一，机场没有对临时工 进行专业的清洗培训。第二，机场对临时工的强制要求促使临时工发生错误。第三，机场没有不允许工人边饮食边工作的规定。第四，机场对直升机的零件缺乏保护措施。第五，综合以上，机场的这些做法是对工人安全的不负责任，临时工不应该为机场负责， 而机场应该对临时工负责。因此，会议结果是机场赔偿伊迪尔特事故预期伤害款10000美元，并免费对其进行一年的专业培训。</p>
-<p>临时工犯了错误不用承担责任，这是美国多数政府部门和企业所存在的规定，因为他们认为，临时工得到的工资与其应承担的责任 成正比，一旦出了事故，也是集体的“不关照”造成的，不应该由临时工担责。在这样的集体意识和民主思想，是造就美国五百强企业数量全球第一的原因，也是美国经济强大的重要原因。</p>
-<h2 id="转载自："><a href="#转载自：" class="headerlink" title="转载自："></a>转载自：</h2><ul>
-<li>作者：蒋周泰</li>
-<li>链接：<a href="https://www.zhihu.com/question/20487481/answer/464226088" target="_blank" rel="noopener">https://www.zhihu.com/question/20487481/answer/464226088</a></li>
-<li>来源：知乎</li>
-</ul>
 
             </div>
             <hr>
@@ -435,61 +417,41 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/05/28/误解很大的一个历史人物——秦始皇/">
+                <a href="/2019/05/31/博客搭建进阶/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="误解很大的一个历史人物——秦始皇">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="博客搭建进阶">
                         
-                        <span class="card-title">误解很大的一个历史人物——秦始皇</span>
+                        <span class="card-title">博客搭建进阶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-历史终究是含有大量的主观色彩，他们为了他们的观点而去证明。愈加的让我觉得自己活在一个虚假的世界。
-
-
-骂他暴君，可他在位37年却没有妄杀一位将军大臣；
-斥他严刑峻法，可他却制定了世界上最早保护人犯权利的法律；
-荆轲行刺，他怒火万丈，可秦军
+                            收集了一些搭建让博客变得更加华丽的法子。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/杂谈/" class="post-category" target="_blank">
-                                    杂谈
+                            <a href="/categories/娱乐/" class="post-category" target="_blank">
+                                    娱乐
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/转载/" target="_blank">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
-                    <a href="/tags/历史/" target="_blank">
-                        <span class="chip bg-color">历史</span>
-                    </a>
-                    
-                    <a href="/tags/风云人物/" target="_blank">
-                        <span class="chip bg-color">风云人物</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -500,45 +462,33 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/28/为什么房价这么高，肉价会涨得这么厉害/">
+                <a href="/2019/05/31/sss/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="为什么房价这么高，肉价会涨得这么厉害">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
                         
-                        <span class="card-title">为什么房价这么高，肉价会涨得这么厉害</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-本文以最浅显得道理阐述经济的原理，进而阐述经济的真相。不会有任何所谓的学术妓女们常用来欺骗人民的深奥的学术理论，还事实以清白，真相只有一个，让我们擦亮眼睛，洞观今天发生的一切。我不是经济学家，但我比经济学家诚实，本文在以下几方面阐述中国经
+                            &lt;!DOCTYPE HTML&gt;
+                                            轻量级滚动动画JavaScript库aos.js | 闪烁之狐                       
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/杂谈/" class="post-category" target="_blank">
-                                    杂谈
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            SSM
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/转载/" target="_blank">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
                 </div>
                 
             </div>
