@@ -4,19 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++的引用和指针区别, 瓦尔登湖">
+    <meta name="keywords" content="一些有趣的字符, 瓦尔登湖">
     <meta name="description" content="
-引用(reference) 与指针（pointer）之间有什么区别和联系呢？
+一些有动作的符号
 
 
-在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：
-什么是引用？
-
-怎样使用引用？
-
-引用的使用场合？
-
-引用与指针有什么联系">
+𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++的引用和指针区别 | 瓦尔登湖</title>
+    <title>一些有趣的字符 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -222,13 +215,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++的引用和指针区别
+                        一些有趣的字符
                     </div>
                 </div>
             </div>
@@ -339,8 +332,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/" target="_blank">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/字符/" target="_blank">
+                                <span class="chip bg-color">字符</span>
                             </a>
                         
                     </div>
@@ -351,8 +344,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/计算机/" class="post-category" target="_blank">
-                                计算机
+                            <a href="/categories/娱乐/" class="post-category" target="_blank">
+                                娱乐
                             </a>
                         
                     </div>
@@ -370,14 +363,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        8
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -389,83 +382,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<p><strong>引用(reference) 与指针（pointer）之间有什么区别和联系呢？</strong></p>
+<p><strong>一些有动作的符号</strong></p>
 <hr>
 <a id="more"></a>
-<h2 id="在c-中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白-："><a href="#在c-中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白-：" class="headerlink" title="在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ："></a><em>在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：</em></h2><ol>
-<li><p>什么是引用？</p>
-</li>
-<li><p>怎样使用引用？</p>
-</li>
-<li><p>引用的使用场合？</p>
-</li>
-<li><p>引用与指针有什么联系和区别？</p>
-</li>
-</ol>
-<h3 id="1、什么是引用？"><a href="#1、什么是引用？" class="headerlink" title="1、什么是引用？"></a>1、什么是引用？</h3><blockquote>
-<p>要明白什么是引用，我们就必须明白c++ 为什么要引入引用? c++ 在某些程度来说，是c的一个扩充和改善，我们知道，c程序一个非常显著的优势就是c程序的执行效率，而c高效执行的原因就是对指针的操作（直接对内存进行操作），小生相信，对于绝大部分c程序员来说，对指针是又爱又恨，爱它，是因为 ，c语言指针所带来的效率是其它程序无法比拟的，恨它，我想，小生也没必要多说了，对指针操作不慎所带来的bug，相信大家都深有体会吧，而c++ 语言设计之初，c++委员会，即想保持c指针的高效，又不想有指针的缺点，所以就引入了引用这一概念，但是后来，却发现，指针没法被引用取代。好了，说了这么多，那到底什么是引用呢？<br>引用（reference）： 引用只是别名，不是实体类型（也就是说c++编译器不为引用单独分配内存空间），对一个对象的引用，就是直接对这个对象的操作。 </p>
-</blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义了一个整形变量a，并且赋初值3</span>
-<span class="token keyword">int</span> <span class="token operator">&amp;</span> ra <span class="token operator">=</span> a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//定义了一个引用 ra ,ra与变量占有同一块内存空间</span>
-a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//此时 a 与ra 的值都为 4；</span>
-ra <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//此时 a 与 ra的值都是5；</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2、怎样使用引用？"><a href="#2、怎样使用引用？" class="headerlink" title="2、怎样使用引用？"></a>2、怎样使用引用？</h3><h4 id="（1）引用必须初始化-引用必须指向所引用的对象"><a href="#（1）引用必须初始化-引用必须指向所引用的对象" class="headerlink" title="（1）引用必须初始化(引用必须指向所引用的对象)"></a>（1）引用必须初始化(引用必须指向所引用的对象)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span><span class="token operator">&amp;</span> ra <span class="token operator">=</span> a<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token operator">&amp;</span>b <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//错误，引用必须初始化</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//正确对字面值常量10的引用</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="（2）引用不能为空"><a href="#（2）引用不能为空" class="headerlink" title="（2）引用不能为空"></a>（2）引用不能为空</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token operator">&amp;</span>b <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//错误，引用不能为空必须有所引用的对象</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="（3）引用不能更换目标"><a href="#（3）引用不能更换目标" class="headerlink" title="（3）引用不能更换目标"></a>（3）引用不能更换目标</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span><span class="token operator">&amp;</span> ra <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// int&amp; ra = b;//错误，多次初始化</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3、引用的使用场合？"><a href="#3、引用的使用场合？" class="headerlink" title="3、引用的使用场合？"></a>3、引用的使用场合？</h3><h4 id="（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）"><a href="#（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）" class="headerlink" title="（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）"></a>（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）</h4><blockquote>
-<p>使用引用型参数有两个好处：<br>（1）因为函数形参和实参是同一个对象，也就不存在对象复制，避免了对象的开销。（2）可以在修改形参的同时对实参的修改。<br>当然了，为了避免函数对原来实参的意外修改我们可以 用const 对引用加以修饰 也就是传常引用。传常引用有两个优势（1）因为不存在拷贝构造所以，可以提高c++程序的执行效率（2）避免对象切割问题。关于这点的详细讨论可以看effective c++ 。</p>
-</blockquote>
-<h4 id="（2）引用型返回值"><a href="#（2）引用型返回值" class="headerlink" title="（2）引用型返回值"></a>（2）引用型返回值</h4><blockquote>
-<p>从函数中返回引用，一定要保证在函数返回以后，被引用的目标一直有效，也就是不能返回函数体内的局部对象的引用，大家都知道， 局部对象离开作用域就会被析构掉，所以不能返回对函数体内的局部对象的引用。</p>
-</blockquote>
-<h3 id="4、引用与指针的联系与区别？"><a href="#4、引用与指针的联系与区别？" class="headerlink" title="4、引用与指针的联系与区别？"></a>4、引用与指针的联系与区别？</h3><p>啰嗦了这么久 ，现在终于回到我们的正题，引用与指针到底有什么区别和联系了，其实，在c++底层中，引用是通过指针实现的。也就是说，在实现层面上，引用就是指针，但是从c++的程序语言层面上来说，引用不是实体类型（不为引用单独分配内存空间）因此，引用与指针之间的区别主要体现在以下几个方面：</p>
-<h4 id="（1）存在空指针，但是不存在空引用"><a href="#（1）存在空指针，但是不存在空引用" class="headerlink" title="（1）存在空指针，但是不存在空引用"></a>（1）存在空指针，但是不存在空引用</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token operator">*</span> a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//空指针，合法</span>
-<span class="token comment" spellcheck="true">//void&amp; b;//空引用，不合法</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="（2）虽然c-编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。"><a href="#（2）虽然c-编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。" class="headerlink" title="（2）虽然c++编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。"></a>（2）虽然c++编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">void</span> <span class="token operator">*</span> a<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//void&amp; b;</span>
-
-    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> z <span class="token operator">=</span> <span class="token number">3</span> <span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//指针c可以不初始化，可以更改其指向的目标，</span>
-    <span class="token keyword">int</span> <span class="token operator">*</span> c<span class="token punctuation">;</span>
-    c <span class="token operator">=</span> <span class="token operator">&amp;</span>x<span class="token punctuation">;</span>
-    c <span class="token operator">=</span> <span class="token operator">&amp;</span>y<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">//引用必须初始化，不可以更改其指向的目标</span>
-    <span class="token comment" spellcheck="true">//int&amp; ra ;//报错，ra 必须要指定初值</span>
-    <span class="token keyword">int</span> <span class="token operator">&amp;</span> ra <span class="token operator">=</span> x<span class="token punctuation">;</span>
-    ra <span class="token operator">=</span> y<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//这里只是把y的值赋给 ra 也就是x 而并不是使引用的目标由 对x的引用到对y的引用</span>
-
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="（3）存在指针数组-，不存在引用数组"><a href="#（3）存在指针数组-，不存在引用数组" class="headerlink" title="（3）存在指针数组 ，不存在引用数组"></a>（3）存在指针数组 ，不存在引用数组</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span><span class="token operator">*</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">&amp;</span>x<span class="token punctuation">,</span><span class="token operator">&amp;</span>y<span class="token punctuation">,</span><span class="token operator">&amp;</span>z <span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//定义了一个有三个整形指针变量的指针数组 a ，合法</span>
-    <span class="token comment" spellcheck="true">//int&amp; a [3] ={x,y ,z};//报错，不允许使用引用数组，因为引用没有内存的分配</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="5、学海拾贝"><a href="#5、学海拾贝" class="headerlink" title="5、学海拾贝"></a>5、学海拾贝</h3><p>在使用引用和指针时，只要记住一点就够了，在c++底层中，引用是通过指针实现的，所以，在实现层面上来说，引用就是指针，但是在c++语法上来说，c++编译器并不为引用类型分配内存，所以引用不能为空，必须被初始化，一旦初始化不能更改引用对象。所有对引用的操作都是对原始对象的操作</p>
+<p>𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝<br>𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓁁𓁀𓀿𓀾<br>𓀽𓀼𓁂𓁃𓁄𓁅𓁆𓁇𓁍𓁌𓁋𓁊𓁉𓁈𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁟𓁞𓁝<br>𓁛𓁚𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁯𓁮𓁭𓁬𓁫𓁪𓁰𓁱𓁲𓁳𓁴𓁵𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋<br>𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬<br>𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓁁𓁀𓀿𓀾𓀽𓀼𓁂𓁃𓁄𓁅𓁆𓁇𓁍𓁌𓁋𓁊𓁉𓁈𓁎<br>𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁟𓁞𓁝𓁜𓁛𓁚𓁠𓁡𓁢𓁣𓁤𓁥<br>𓁦𓁧𓁨𓁩𓁯𓁮𓁭𓁬𓁫𓁪𓁰𓁱𓁲𓁳𓁴𓁵</p>
 
             </div>
             <hr>
@@ -505,7 +425,8 @@ ra <span class="token operator">=</span> <span class="token number">5</span><spa
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/09/14/一些有趣的字符/">
                     <div class="card-image">
@@ -527,9 +448,9 @@ ra <span class="token operator">=</span> <span class="token number">5</span><spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -542,6 +463,7 @@ ra <span class="token operator">=</span> <span class="token number">5</span><spa
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -560,32 +482,35 @@ ra <span class="token operator">=</span> <span class="token number">5</span><spa
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/04/C++程序设计基础/">
+                <a href="/2019/09/14/C++的引用和指针区别/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="C++程序设计基础">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="C++的引用和指针区别">
                         
-                        <span class="card-title">C++程序设计基础</span>
+                        <span class="card-title">C++的引用和指针区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            补码：源码求反加一
-小数点小数点浮动方式
-endl行结束
-    它的作用和 “\n” 的作用时相同的。
-C++ 语言的四种初始化方式1. int a = 0
-2. int a(0)
-3. int a = {0}
-4. int a{0}
-p
+                            
+引用(reference) 与指针（pointer）之间有什么区别和联系呢？
+
+
+在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：
+什么是引用？
+
+怎样使用引用？
+
+引用的使用场合？
+
+引用与指针有什么联系
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
                             </span>
                         <span class="publish-author">
                             
