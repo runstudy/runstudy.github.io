@@ -4,9 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建进阶, 瓦尔登湖">
-    <meta name="description" content="
-让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffold">
+    <meta name="keywords" content="C++程序设计基础, 瓦尔登湖">
+    <meta name="description" content="补码：源码求反加一
+小数点小数点浮动方式
+endl行结束
+    它的作用和 “\n” 的作用时相同的。
+C++ 语言的四种初始化方式1. int a = 0
+2. int a(0)
+3. int a = {0}
+4. int a{0}
+p">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>博客搭建进阶 | 瓦尔登湖</title>
+    <title>C++程序设计基础 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -212,13 +219,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        博客搭建进阶
+                        C++程序设计基础
                     </div>
                 </div>
             </div>
@@ -327,9 +334,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -337,8 +348,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/娱乐/" class="post-category" target="_blank">
-                                娱乐
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                计算机
                             </a>
                         
                     </div>
@@ -349,14 +360,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-31
+                    2019-06-04
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        213
+                        360
                     </div>
                     
 
@@ -374,51 +385,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h3 id="让每个新建的文章都自动添加-Front-matter"><a href="#让每个新建的文章都自动添加-Front-matter" class="headerlink" title="让每个新建的文章都自动添加 Front-matter"></a><strong>让每个新建的文章都自动添加 Front-matter</strong></h3><p>每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置：</p>
-<pre class="line-numbers language-JavaScript"><code class="language-JavaScript">---
-title: {{ title }}
-date: {{ date }}
-author: {{ author }}
-tags: {{ tags }}
-categories: {{ categories }}
-img: {{ img }}
-top: {{ top }}
-password: {{ password }}
-summary: {{ summary }}
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>之后再创建文章时，文章上方会自动添加这些字段</p>
-<hr>
-<pre><code>main()
-{
-    int a,b,c,g,d,h;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    g=a;c=b;
-    if(a&lt;b)
-    {
-        a^=b;    b^=a;    a^=b;
-    }
-    if(g&lt;c)
-    {
-        g^=c;    g^=c;    g^=c;
-    }
-    yueshu(a,b);
-    putchar(&#39;\n&#39;);
-    h=gcd(g,c);
-    printf(&quot;%d\n&quot;,h);
-}
-</code></pre><pre class="line-numbers language-C"><code class="language-C">main()
-{
-    int a,b,c,g,d,h;
-    scanf("%d%d",&a,&b);
-    g=a;c=b;
-    if(a<b) { a^="b;" b^="a;" } if(g<c) g^="c;" yueshu(a,b); putchar('\n'); h="gcd(g,c);" printf("%d\n",h); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></b)></code></pre>
-<pre class="line-numbers language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'window loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="post-ejs，这个可以修改加密的插件"><a href="#post-ejs，这个可以修改加密的插件" class="headerlink" title="post.ejs，这个可以修改加密的插件"></a>post.ejs，这个可以修改加密的插件</h2>
+                <h3 id="补码："><a href="#补码：" class="headerlink" title="补码："></a>补码：</h3><pre><code>源码求反加一
+</code></pre><h3 id="小数点"><a href="#小数点" class="headerlink" title="小数点"></a>小数点</h3><pre><code>小数点浮动方式
+</code></pre><h3 id="endl"><a href="#endl" class="headerlink" title="endl"></a>endl</h3><pre><code>行结束
+    它的作用和 “\n” 的作用时相同的。
+</code></pre><h3 id="C-语言的四种初始化方式"><a href="#C-语言的四种初始化方式" class="headerlink" title="C++ 语言的四种初始化方式"></a>C++ 语言的<em>四种</em>初始化方式</h3><pre><code>1. int a = 0
+2. int a(0)
+3. int a = {0}
+4. int a{0}
+</code></pre><h4 id="ps：使用大括号的方式称为列表初始化，不会造成数据丢失。"><a href="#ps：使用大括号的方式称为列表初始化，不会造成数据丢失。" class="headerlink" title="ps：使用大括号的方式称为列表初始化，不会造成数据丢失。"></a><strong>ps：</strong>使用大括号的方式称为列表初始化，不会造成数据丢失。</h4><h3 id="const-符号常量定义"><a href="#const-符号常量定义" class="headerlink" title="const:符号常量定义"></a>const:符号常量定义</h3><pre><code>和 define 的区别？
+</code></pre><h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><pre><code>浮点数都是近似存储的，所以比如：定义的 pi=3.14159，但是计算机显示的是 pi=3.14158999999，所以对浮点数不能直接去比较他们相不相等。一般是比较他们相减的差是不是足够小，足够小就就可以认为他们相等了。
+</code></pre><h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><pre><code>两种结果：true和false
+</code></pre><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><pre><code>异或，按位或，按位与，按位异或，按位取反，移位等等...
+</code></pre><h3 id="混合运算时数据类型的转换——显示转换"><a href="#混合运算时数据类型的转换——显示转换" class="headerlink" title="混合运算时数据类型的转换——显示转换"></a>混合运算时数据类型的转换——显示转换</h3><pre><code>类型转换操作符&lt;类型说明符&gt;(表达式)
+    static_cast
+</code></pre><h3 id="类型别名：为已有类型另外命名"><a href="#类型别名：为已有类型另外命名" class="headerlink" title="类型别名：为已有类型另外命名"></a>类型别名：为已有类型另外命名</h3><pre><code>    1.C语言继承的办法：
+            typedef 已有类型名 新类型名
+            如：
+            typedef int Natural;
+    2.C++中新的：
+            using 新类型名 = 已有类型名
+            如：
+            using Area = double;
+</code></pre><h3 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h3><pre><code>    关键字enum
+    enum 枚举类型名 {变量值列表}
+    如：
+    enum Weekend
+    {SUN,MON,TUE,WED,FRI,SAT}
+</code></pre><h3 id="auto类型和decltype类型"><a href="#auto类型和decltype类型" class="headerlink" title="auto类型和decltype类型"></a>auto类型和decltype类型</h3><h2 id="第二章学习要求："><a href="#第二章学习要求：" class="headerlink" title="第二章学习要求："></a>第二章学习要求：</h2><pre><code>* 完成实验二   阅读教材第二章
+</code></pre>
             </div>
             <hr>
 
@@ -459,6 +454,66 @@ summary: {{ summary }}
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2019/09/14/C++的引用和指针区别/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="C++的引用和指针区别">
+                        
+                        <span class="card-title">C++的引用和指针区别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+引用(reference) 与指针（pointer）之间有什么区别和联系呢？
+
+
+在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：
+什么是引用？
+
+怎样使用引用？
+
+引用的使用场合？
+
+引用与指针有什么联系
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2019/06/02/浙大考研/">
                     <div class="card-image">
                         
@@ -475,46 +530,8 @@ summary: {{ summary }}
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-02
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/05/31/sss/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            &lt;!DOCTYPE HTML&gt;
-                                            轻量级滚动动画JavaScript库aos.js | 闪烁之狐                       
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-02
                             </span>
                         <span class="publish-author">
                             

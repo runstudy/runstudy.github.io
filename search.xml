@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C++的引用和指针区别]]></title>
+    <url>%2F2019%2F09%2F14%2FC%2B%2B%E7%9A%84%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[引用(reference) 与指针（pointer）之间有什么区别和联系呢？ 在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ： 什么是引用？ 怎样使用引用？ 引用的使用场合？ 引用与指针有什么联系和区别？ 1、什么是引用？ 要明白什么是引用，我们就必须明白c++ 为什么要引入引用? c++ 在某些程度来说，是c的一个扩充和改善，我们知道，c程序一个非常显著的优势就是c程序的执行效率，而c高效执行的原因就是对指针的操作（直接对内存进行操作），小生相信，对于绝大部分c程序员来说，对指针是又爱又恨，爱它，是因为 ，c语言指针所带来的效率是其它程序无法比拟的，恨它，我想，小生也没必要多说了，对指针操作不慎所带来的bug，相信大家都深有体会吧，而c++ 语言设计之初，c++委员会，即想保持c指针的高效，又不想有指针的缺点，所以就引入了引用这一概念，但是后来，却发现，指针没法被引用取代。好了，说了这么多，那到底什么是引用呢？引用（reference）： 引用只是别名，不是实体类型（也就是说c++编译器不为引用单独分配内存空间），对一个对象的引用，就是直接对这个对象的操作。 int a = 3; //定义了一个整形变量a，并且赋初值3 int &amp; ra = a;//定义了一个引用 ra ,ra与变量占有同一块内存空间 a = 4; //此时 a 与ra 的值都为 4； ra = 5;//此时 a 与 ra的值都是5； 2、怎样使用引用？（1）引用必须初始化(引用必须指向所引用的对象)int a = 3; int&amp; ra = a; int &amp;b ;//错误，引用必须初始化 const int &amp;b = 10;//正确对字面值常量10的引用 （2）引用不能为空int &amp;b ;//错误，引用不能为空必须有所引用的对象 （3）引用不能更换目标#include&lt;iostream> using namespace std; int main(void){ int a = 3; int b = 4; int&amp; ra = a; // int&amp; ra = b;//错误，多次初始化 return 0; } 3、引用的使用场合？（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象） 使用引用型参数有两个好处：（1）因为函数形参和实参是同一个对象，也就不存在对象复制，避免了对象的开销。（2）可以在修改形参的同时对实参的修改。当然了，为了避免函数对原来实参的意外修改我们可以 用const 对引用加以修饰 也就是传常引用。传常引用有两个优势（1）因为不存在拷贝构造所以，可以提高c++程序的执行效率（2）避免对象切割问题。关于这点的详细讨论可以看effective c++ 。 （2）引用型返回值 从函数中返回引用，一定要保证在函数返回以后，被引用的目标一直有效，也就是不能返回函数体内的局部对象的引用，大家都知道， 局部对象离开作用域就会被析构掉，所以不能返回对函数体内的局部对象的引用。 4、引用与指针的联系与区别？啰嗦了这么久 ，现在终于回到我们的正题，引用与指针到底有什么区别和联系了，其实，在c++底层中，引用是通过指针实现的。也就是说，在实现层面上，引用就是指针，但是从c++的程序语言层面上来说，引用不是实体类型（不为引用单独分配内存空间）因此，引用与指针之间的区别主要体现在以下几个方面： （1）存在空指针，但是不存在空引用void * a;//空指针，合法 //void&amp; b;//空引用，不合法 （2）虽然c++编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。#include&lt;iostream> using namespace std; int main(void){ void * a; //void&amp; b; int x = 1; int y = 2; int z = 3 ; //指针c可以不初始化，可以更改其指向的目标， int * c; c = &amp;x; c = &amp;y; //引用必须初始化，不可以更改其指向的目标 //int&amp; ra ;//报错，ra 必须要指定初值 int &amp; ra = x; ra = y;//这里只是把y的值赋给 ra 也就是x 而并不是使引用的目标由 对x的引用到对y的引用 return 0; } （3）存在指针数组 ，不存在引用数组int* a[3] ={&amp;x,&amp;y,&amp;z };//定义了一个有三个整形指针变量的指针数组 a ，合法 //int&amp; a [3] ={x,y ,z};//报错，不允许使用引用数组，因为引用没有内存的分配 5、学海拾贝大家在使用引用和指针时，只要记住一点就够了，在c++底层中，引用是通过指针实现的，所以，在实现层面上来说，引用就是指针，但是在c++语法上来说，c++编译器并不为引用类型分配内存，所以引用不能为空，必须被初始化，一旦初始化不能更改引用对象。所有对引用的操作都是对原始对象的操作]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++程序设计基础]]></title>
+    <url>%2F2019%2F06%2F04%2FC%2B%2B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[补码：源码求反加一 小数点小数点浮动方式 endl行结束 它的作用和 “\n” 的作用时相同的。 C++ 语言的四种初始化方式1. int a = 0 2. int a(0) 3. int a = {0} 4. int a{0} ps：使用大括号的方式称为列表初始化，不会造成数据丢失。const:符号常量定义和 define 的区别？ 浮点数浮点数都是近似存储的，所以比如：定义的 pi=3.14159，但是计算机显示的是 pi=3.14158999999，所以对浮点数不能直接去比较他们相不相等。一般是比较他们相减的差是不是足够小，足够小就就可以认为他们相等了。 布尔类型两种结果：true和false 逻辑运算符异或，按位或，按位与，按位异或，按位取反，移位等等... 混合运算时数据类型的转换——显示转换类型转换操作符&lt;类型说明符&gt;(表达式) static_cast 类型别名：为已有类型另外命名 1.C语言继承的办法： typedef 已有类型名 新类型名 如： typedef int Natural; 2.C++中新的： using 新类型名 = 已有类型名 如： using Area = double; 枚举类型 关键字enum enum 枚举类型名 {变量值列表} 如： enum Weekend {SUN,MON,TUE,WED,FRI,SAT} auto类型和decltype类型第二章学习要求：* 完成实验二 阅读教材第二章]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[浙大考研]]></title>
+    <url>%2F2019%2F06%2F02%2F%E6%B5%99%E5%A4%A7%E8%80%83%E7%A0%94%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[博客搭建进阶]]></title>
     <url>%2F2019%2F05%2F31%2F%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%9B%E9%98%B6%2F</url>
-    <content type="text"><![CDATA[让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置： 1234567891011---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;author: &#123;&#123; author &#125;&#125;tags: &#123;&#123; tags &#125;&#125;categories: &#123;&#123; categories &#125;&#125;img: &#123;&#123; img &#125;&#125;top: &#123;&#123; top &#125;&#125;password: &#123;&#123; password &#125;&#125;summary: &#123;&#123; summary &#125;&#125;--- 之后再创建文章时，文章上方会自动添加这些字段]]></content>
+    <content type="text"><![CDATA[让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置： --- title: {{ title }} date: {{ date }} author: {{ author }} tags: {{ tags }} categories: {{ categories }} img: {{ img }} top: {{ top }} password: {{ password }} summary: {{ summary }} --- 之后再创建文章时，文章上方会自动添加这些字段 main() { int a,b,c,g,d,h; scanf(&quot;%d%d&quot;,&amp;a,&amp;b); g=a;c=b; if(a&lt;b) { a^=b; b^=a; a^=b; } if(g&lt;c) { g^=c; g^=c; g^=c; } yueshu(a,b); putchar(&#39;\n&#39;); h=gcd(g,c); printf(&quot;%d\n&quot;,h); } main() { int a,b,c,g,d,h; scanf("%d%d",&a,&b); g=a;c=b; if(a]]></content>
       <categories>
         <category>娱乐</category>
       </categories>
@@ -64,6 +91,6 @@
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F04%2F29%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post$ hexo new "My New Post" More info: Writing Run server$ hexo server More info: Server Generate static files$ hexo generate More info: Generating Deploy to remote sites$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>

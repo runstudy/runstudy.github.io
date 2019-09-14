@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, 瓦尔登湖">
-    <meta name="description" content="标签 | 瓦尔登湖">
+    <meta name="keywords" content="分类: 计算机, 瓦尔登湖">
+    <meta name="description" content="分类: 计算机 | 瓦尔登湖">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签 | 瓦尔登湖</title>
+    <title>分类: 计算机 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -224,53 +224,55 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
     
 
-<div id="tags" class="container chip-container">
+<div id="category-cloud" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
+                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
             </div>
             <div class="tag-chips">
                 
                 
-                <a href="/tags/C/" title="C++: 2">
+                
+                <a href="/categories/计算机/" title="计算机: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="C++" style="background-color: #F9EBEA;">C++
+                             chip-active " style="background-color: #F9EBEA;">计算机
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/好人/" title="好人: 1">
+                <a href="/categories/娱乐/" title="娱乐: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="好人" style="background-color: #F5EEF8;">好人
+                             chip-default " style="background-color: #F5EEF8;">娱乐
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/转载/" title="转载: 3">
+                <a href="/categories/杂谈/" title="杂谈: 4">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="转载" style="background-color: #D5F5E3;">转载
-                        <span class="tag-length">3</span>
+                             chip-default " style="background-color: #D5F5E3;">杂谈
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/历史/" title="历史: 1">
+                <a href="/categories/杂谈/我的/" title="我的: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="历史" style="background-color: #E8F8F5;">历史
+                             chip-default " style="background-color: #E8F8F5;">我的
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/风云人物/" title="风云人物: 1">
+                <a href="/categories/杂谈/我的/生活/" title="生活: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="风云人物" style="background-color: #FEF9E7;">风云人物
+                             chip-default " style="background-color: #FEF9E7;">生活
                         <span class="tag-length">1</span>
                     </span>
                 </a>
+                
                 
             </div>
         </div>
@@ -278,31 +280,125 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </div>
 
     
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/14/C++的引用和指针区别/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="C++的引用和指针区别">
+                            
+                            <span class="card-title">C++的引用和指针区别</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+引用(reference) 与指针（pointer）之间有什么区别和联系呢？
 
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
 
-    $('#tag-wordcloud').jQCloud([{"text":"C++","weight":2,"link":"http://runstudy.github.io/tags/C/"},{"text":"好人","weight":1,"link":"http://runstudy.github.io/tags/好人/"},{"text":"转载","weight":3,"link":"http://runstudy.github.io/tags/转载/"},{"text":"历史","weight":1,"link":"http://runstudy.github.io/tags/历史/"},{"text":"风云人物","weight":1,"link":"http://runstudy.github.io/tags/风云人物/"}], {
-        autoResize: true
-    });
-</script>
-    
+在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：
+什么是引用？
 
+怎样使用引用？
+
+引用的使用场合？
+
+引用与指针有什么联系
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/C/" target="_blank">
+                            <span class="chip bg-color">C++</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/06/04/C++程序设计基础/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="C++程序设计基础">
+                            
+                            <span class="card-title">C++程序设计基础</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                补码：源码求反加一
+小数点小数点浮动方式
+endl行结束
+    它的作用和 “\n” 的作用时相同的。
+C++ 语言的四种初始化方式1. int a = 0
+2. int a(0)
+3. int a = {0}
+4. int a{0}
+p
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/C/" target="_blank">
+                            <span class="chip bg-color">C++</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">

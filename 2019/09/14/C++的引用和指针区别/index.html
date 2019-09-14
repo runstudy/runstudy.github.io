@@ -1,0 +1,800 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="C++的引用和指针区别, 瓦尔登湖">
+    <meta name="description" content="
+引用(reference) 与指针（pointer）之间有什么区别和联系呢？
+
+
+在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：
+什么是引用？
+
+怎样使用引用？
+
+引用的使用场合？
+
+引用与指针有什么联系">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>C++的引用和指针区别 | 瓦尔登湖</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">瓦尔登湖</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">瓦尔登湖</div>
+        <div class="logo-desc">
+            
+            拾忆
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        C++的引用和指针区别
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                计算机
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-14
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        5 分
+                    </div>
+                    
+                
+				
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <hr>
+<p><strong>引用(reference) 与指针（pointer）之间有什么区别和联系呢？</strong></p>
+<hr>
+<a id="more"></a>
+<h2 id="在c-中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白-："><a href="#在c-中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白-：" class="headerlink" title="在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ："></a><em>在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：</em></h2><ol>
+<li><p>什么是引用？</p>
+</li>
+<li><p>怎样使用引用？</p>
+</li>
+<li><p>引用的使用场合？</p>
+</li>
+<li><p>引用与指针有什么联系和区别？</p>
+</li>
+</ol>
+<h3 id="1、什么是引用？"><a href="#1、什么是引用？" class="headerlink" title="1、什么是引用？"></a>1、什么是引用？</h3><blockquote>
+<p>要明白什么是引用，我们就必须明白c++ 为什么要引入引用? c++ 在某些程度来说，是c的一个扩充和改善，我们知道，c程序一个非常显著的优势就是c程序的执行效率，而c高效执行的原因就是对指针的操作（直接对内存进行操作），小生相信，对于绝大部分c程序员来说，对指针是又爱又恨，爱它，是因为 ，c语言指针所带来的效率是其它程序无法比拟的，恨它，我想，小生也没必要多说了，对指针操作不慎所带来的bug，相信大家都深有体会吧，而c++ 语言设计之初，c++委员会，即想保持c指针的高效，又不想有指针的缺点，所以就引入了引用这一概念，但是后来，却发现，指针没法被引用取代。好了，说了这么多，那到底什么是引用呢？<br>引用（reference）： 引用只是别名，不是实体类型（也就是说c++编译器不为引用单独分配内存空间），对一个对象的引用，就是直接对这个对象的操作。 </p>
+</blockquote>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义了一个整形变量a，并且赋初值3</span>
+<span class="token keyword">int</span> <span class="token operator">&amp;</span> ra <span class="token operator">=</span> a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//定义了一个引用 ra ,ra与变量占有同一块内存空间</span>
+a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//此时 a 与ra 的值都为 4；</span>
+ra <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//此时 a 与 ra的值都是5；</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2、怎样使用引用？"><a href="#2、怎样使用引用？" class="headerlink" title="2、怎样使用引用？"></a>2、怎样使用引用？</h3><h4 id="（1）引用必须初始化-引用必须指向所引用的对象"><a href="#（1）引用必须初始化-引用必须指向所引用的对象" class="headerlink" title="（1）引用必须初始化(引用必须指向所引用的对象)"></a>（1）引用必须初始化(引用必须指向所引用的对象)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token operator">&amp;</span> ra <span class="token operator">=</span> a<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">&amp;</span>b <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//错误，引用必须初始化</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//正确对字面值常量10的引用</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="（2）引用不能为空"><a href="#（2）引用不能为空" class="headerlink" title="（2）引用不能为空"></a>（2）引用不能为空</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token operator">&amp;</span>b <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//错误，引用不能为空必须有所引用的对象</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="（3）引用不能更换目标"><a href="#（3）引用不能更换目标" class="headerlink" title="（3）引用不能更换目标"></a>（3）引用不能更换目标</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">&amp;</span> ra <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// int&amp; ra = b;//错误，多次初始化</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3、引用的使用场合？"><a href="#3、引用的使用场合？" class="headerlink" title="3、引用的使用场合？"></a>3、引用的使用场合？</h3><h4 id="（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）"><a href="#（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）" class="headerlink" title="（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）"></a>（1）引用型参数（函数形参只是实参的别名，也就是说形参和实参是同一个对象）</h4><blockquote>
+<p>使用引用型参数有两个好处：<br>（1）因为函数形参和实参是同一个对象，也就不存在对象复制，避免了对象的开销。（2）可以在修改形参的同时对实参的修改。<br>当然了，为了避免函数对原来实参的意外修改我们可以 用const 对引用加以修饰 也就是传常引用。传常引用有两个优势（1）因为不存在拷贝构造所以，可以提高c++程序的执行效率（2）避免对象切割问题。关于这点的详细讨论可以看effective c++ 。</p>
+</blockquote>
+<h4 id="（2）引用型返回值"><a href="#（2）引用型返回值" class="headerlink" title="（2）引用型返回值"></a>（2）引用型返回值</h4><blockquote>
+<p>从函数中返回引用，一定要保证在函数返回以后，被引用的目标一直有效，也就是不能返回函数体内的局部对象的引用，大家都知道， 局部对象离开作用域就会被析构掉，所以不能返回对函数体内的局部对象的引用。</p>
+</blockquote>
+<h3 id="4、引用与指针的联系与区别？"><a href="#4、引用与指针的联系与区别？" class="headerlink" title="4、引用与指针的联系与区别？"></a>4、引用与指针的联系与区别？</h3><p>啰嗦了这么久 ，现在终于回到我们的正题，引用与指针到底有什么区别和联系了，其实，在c++底层中，引用是通过指针实现的。也就是说，在实现层面上，引用就是指针，但是从c++的程序语言层面上来说，引用不是实体类型（不为引用单独分配内存空间）因此，引用与指针之间的区别主要体现在以下几个方面：</p>
+<h4 id="（1）存在空指针，但是不存在空引用"><a href="#（1）存在空指针，但是不存在空引用" class="headerlink" title="（1）存在空指针，但是不存在空引用"></a>（1）存在空指针，但是不存在空引用</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token operator">*</span> a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//空指针，合法</span>
+<span class="token comment" spellcheck="true">//void&amp; b;//空引用，不合法</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="（2）虽然c-编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。"><a href="#（2）虽然c-编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。" class="headerlink" title="（2）虽然c++编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。"></a>（2）虽然c++编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token operator">*</span> a<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//void&amp; b;</span>
+
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> z <span class="token operator">=</span> <span class="token number">3</span> <span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//指针c可以不初始化，可以更改其指向的目标，</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span> c<span class="token punctuation">;</span>
+    c <span class="token operator">=</span> <span class="token operator">&amp;</span>x<span class="token punctuation">;</span>
+    c <span class="token operator">=</span> <span class="token operator">&amp;</span>y<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//引用必须初始化，不可以更改其指向的目标</span>
+    <span class="token comment" spellcheck="true">//int&amp; ra ;//报错，ra 必须要指定初值</span>
+    <span class="token keyword">int</span> <span class="token operator">&amp;</span> ra <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    ra <span class="token operator">=</span> y<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//这里只是把y的值赋给 ra 也就是x 而并不是使引用的目标由 对x的引用到对y的引用</span>
+
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="（3）存在指针数组-，不存在引用数组"><a href="#（3）存在指针数组-，不存在引用数组" class="headerlink" title="（3）存在指针数组 ，不存在引用数组"></a>（3）存在指针数组 ，不存在引用数组</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span><span class="token operator">*</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">&amp;</span>x<span class="token punctuation">,</span><span class="token operator">&amp;</span>y<span class="token punctuation">,</span><span class="token operator">&amp;</span>z <span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//定义了一个有三个整形指针变量的指针数组 a ，合法</span>
+    <span class="token comment" spellcheck="true">//int&amp; a [3] ={x,y ,z};//报错，不允许使用引用数组，因为引用没有内存的分配</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="5、学海拾贝"><a href="#5、学海拾贝" class="headerlink" title="5、学海拾贝"></a>5、学海拾贝</h3><p>大家在使用引用和指针时，只要记住一点就够了，在c++底层中，引用是通过指针实现的，所以，在实现层面上来说，引用就是指针，但是在c++语法上来说，c++编译器并不为引用类型分配内存，所以引用不能为空，必须被初始化，一旦初始化不能更改引用对象。所有对引用的操作都是对原始对象的操作</p>
+
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/09/14/C++的引用和指针区别/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="C++的引用和指针区别">
+                        
+                        <span class="card-title">C++的引用和指针区别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+引用(reference) 与指针（pointer）之间有什么区别和联系呢？
+
+
+在c++中，引用与指针到底有什么联系和区别呢？要弄清楚这个问题，我们必须明白 ：
+什么是引用？
+
+怎样使用引用？
+
+引用的使用场合？
+
+引用与指针有什么联系
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/06/04/C++程序设计基础/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="C++程序设计基础">
+                        
+                        <span class="card-title">C++程序设计基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            补码：源码求反加一
+小数点小数点浮动方式
+endl行结束
+    它的作用和 “\n” 的作用时相同的。
+C++ 语言的四种初始化方式1. int a = 0
+2. int a(0)
+3. int a = {0}
+4. int a{0}
+p
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">13k</span>
+            
+
+            
+			
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+
+</body>
+</html>

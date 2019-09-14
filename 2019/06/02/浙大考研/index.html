@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建进阶, 瓦尔登湖">
-    <meta name="description" content="
-让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffold">
+    <meta name="keywords" content="浙大考研, 瓦尔登湖">
+    <meta name="description" content="浙大考研 | 瓦尔登湖">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>博客搭建进阶 | 瓦尔登湖</title>
+    <title>浙大考研 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -212,13 +211,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        博客搭建进阶
+                        浙大考研
                     </div>
                 </div>
             </div>
@@ -334,29 +333,20 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/娱乐/" class="post-category" target="_blank">
-                                娱乐
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-31
+                    2019-06-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        213
+                        0
                     </div>
                     
 
@@ -374,51 +364,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h3 id="让每个新建的文章都自动添加-Front-matter"><a href="#让每个新建的文章都自动添加-Front-matter" class="headerlink" title="让每个新建的文章都自动添加 Front-matter"></a><strong>让每个新建的文章都自动添加 Front-matter</strong></h3><p>每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置：</p>
-<pre class="line-numbers language-JavaScript"><code class="language-JavaScript">---
-title: {{ title }}
-date: {{ date }}
-author: {{ author }}
-tags: {{ tags }}
-categories: {{ categories }}
-img: {{ img }}
-top: {{ top }}
-password: {{ password }}
-summary: {{ summary }}
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>之后再创建文章时，文章上方会自动添加这些字段</p>
-<hr>
-<pre><code>main()
-{
-    int a,b,c,g,d,h;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    g=a;c=b;
-    if(a&lt;b)
-    {
-        a^=b;    b^=a;    a^=b;
-    }
-    if(g&lt;c)
-    {
-        g^=c;    g^=c;    g^=c;
-    }
-    yueshu(a,b);
-    putchar(&#39;\n&#39;);
-    h=gcd(g,c);
-    printf(&quot;%d\n&quot;,h);
-}
-</code></pre><pre class="line-numbers language-C"><code class="language-C">main()
-{
-    int a,b,c,g,d,h;
-    scanf("%d%d",&a,&b);
-    g=a;c=b;
-    if(a<b) { a^="b;" b^="a;" } if(g<c) g^="c;" yueshu(a,b); putchar('\n'); h="gcd(g,c);" printf("%d\n",h); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></b)></code></pre>
-<pre class="line-numbers language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'window loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="post-ejs，这个可以修改加密的插件"><a href="#post-ejs，这个可以修改加密的插件" class="headerlink" title="post.ejs，这个可以修改加密的插件"></a>post.ejs，这个可以修改加密的插件</h2>
+                
             </div>
             <hr>
 
@@ -459,32 +405,52 @@ summary: {{ summary }}
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/02/浙大考研/">
+                <a href="/2019/06/04/C++程序设计基础/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="浙大考研">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="C++程序设计基础">
                         
-                        <span class="card-title">浙大考研</span>
+                        <span class="card-title">C++程序设计基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            补码：源码求反加一
+小数点小数点浮动方式
+endl行结束
+    它的作用和 “\n” 的作用时相同的。
+C++ 语言的四种初始化方式1. int a = 0
+2. int a(0)
+3. int a = {0}
+4. int a{0}
+p
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-02
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-04
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -496,20 +462,19 @@ summary: {{ summary }}
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/31/sss/">
+                <a href="/2019/05/31/博客搭建进阶/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="博客搭建进阶">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">博客搭建进阶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &lt;!DOCTYPE HTML&gt;
-                                            轻量级滚动动画JavaScript库aos.js | 闪烁之狐                       
+                            收集了一些搭建让博客变得更加华丽的法子。
                         
                     </div>
                     <div class="publish-info">
@@ -518,8 +483,12 @@ summary: {{ summary }}
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/娱乐/" class="post-category" target="_blank">
+                                    娱乐
+                                </a>
+                            
                             
                         </span>
                     </div>
