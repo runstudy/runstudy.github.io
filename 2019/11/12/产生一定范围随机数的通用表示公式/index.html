@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建进阶, 瓦尔登湖">
-    <meta name="description" content="
-让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffold">
+    <meta name="keywords" content="产生一定范围随机数的通用表示公式, 瓦尔登湖">
+    <meta name="description" content="要取得 [a,b) 的随机整数，使用 (rand() % (b-a))+ a;
+要取得 [a,b] 的随机整数，使用 (rand() % (b-a+1))+ a;
+要取得 (a,b] 的随机整数，使用 (rand() % (b-a))+ a">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>博客搭建进阶 | 瓦尔登湖</title>
+    <title>产生一定范围随机数的通用表示公式 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -212,13 +213,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        博客搭建进阶
+                        产生一定范围随机数的通用表示公式
                     </div>
                 </div>
             </div>
@@ -327,9 +328,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/数据结构/" target="_blank">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -337,8 +346,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/娱乐/" class="post-category" target="_blank">
-                                娱乐
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                计算机
                             </a>
                         
                     </div>
@@ -349,14 +358,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-31
+                    2019-11-12
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        213
+                        136
                     </div>
                     
 
@@ -374,51 +383,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h3 id="让每个新建的文章都自动添加-Front-matter"><a href="#让每个新建的文章都自动添加-Front-matter" class="headerlink" title="让每个新建的文章都自动添加 Front-matter"></a><strong>让每个新建的文章都自动添加 Front-matter</strong></h3><p>每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置：</p>
-<pre class="line-numbers language-JavaScript"><code class="language-JavaScript">---
-title: {{ title }}
-date: {{ date }}
-author: {{ author }}
-tags: {{ tags }}
-categories: {{ categories }}
-img: {{ img }}
-top: {{ top }}
-password: {{ password }}
-summary: {{ summary }}
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>之后再创建文章时，文章上方会自动添加这些字段</p>
-<hr>
-<pre><code>main()
-{
-    int a,b,c,g,d,h;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    g=a;c=b;
-    if(a&lt;b)
-    {
-        a^=b;    b^=a;    a^=b;
-    }
-    if(g&lt;c)
-    {
-        g^=c;    g^=c;    g^=c;
-    }
-    yueshu(a,b);
-    putchar(&#39;\n&#39;);
-    h=gcd(g,c);
-    printf(&quot;%d\n&quot;,h);
-}
-</code></pre><pre class="line-numbers language-C"><code class="language-C">main()
-{
-    int a,b,c,g,d,h;
-    scanf("%d%d",&a,&b);
-    g=a;c=b;
-    if(a<b) { a^="b;" b^="a;" } if(g<c) g^="c;" yueshu(a,b); putchar('\n'); h="gcd(g,c);" printf("%d\n",h); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></b)></code></pre>
-<pre class="line-numbers language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'window loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="post-ejs，这个可以修改加密的插件"><a href="#post-ejs，这个可以修改加密的插件" class="headerlink" title="post.ejs，这个可以修改加密的插件"></a>post.ejs，这个可以修改加密的插件</h2>
+                <p>要取得 [a,b) 的随机整数，使用 (rand() % (b-a))+ a;</p>
+<p>要取得 [a,b] 的随机整数，使用 (rand() % (b-a+1))+ a;</p>
+<p>要取得 (a,b] 的随机整数，使用 (rand() % (b-a))+ a + 1;</p>
+<p>通用公式: a + rand() % n；其中的 a 是起始值，n 是整数的范围。</p>
+<p>要取得 a 到 b 之间的随机整数，另一种表示：a + (int)b * rand() / (RAND_MAX + 1)。</p>
+<p>要取得 0～1 之间的浮点数，可以使用 rand() / double(RAND_MAX)。</p>
+<p><strong><br>注：rand()产生的只是伪随机数，具体的看“C+++rand 与 srand 的用法”<br></strong></p>
+
             </div>
             <hr>
 
@@ -459,32 +431,47 @@ summary: {{ summary }}
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/02/浙大考研/">
+                <a href="/2019/11/12/C++rand 与 srand 的用法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="浙大考研">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="C+++rand 与 srand 的用法">
                         
-                        <span class="card-title">浙大考研</span>
+                        <span class="card-title">C+++rand 与 srand 的用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+ C++ 可以用rand 与 srand创建随机数 
+
+计算机的随机数都是由伪随机数，即是由小M多项式序列生成的，其中产生每个小序列都有一个初始值，即随机种子。（注意： 小M多项式序列的周期是65535，即每次利用一个随机种子生成的随机数
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-02
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -496,33 +483,48 @@ summary: {{ summary }}
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/31/sss/">
+                <a href="/2019/09/14/一些有趣的字符/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="一些有趣的字符">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">一些有趣的字符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &lt;!DOCTYPE HTML&gt;
-                                            轻量级滚动动画JavaScript库aos.js | 闪烁之狐                       
+                            
+一些有动作的符号
+
+
+𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/娱乐/" class="post-category" target="_blank">
+                                    娱乐
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/字符/" target="_blank">
+                        <span class="chip bg-color">字符</span>
+                    </a>
+                    
                 </div>
                 
             </div>
