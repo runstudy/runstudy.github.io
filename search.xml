@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[const int与int const作为C ++和C中的函数参数]]></title>
+    <url>%2F2019%2F11%2F13%2Fconst%20int%E4%B8%8Eint%20const%E4%BD%9C%E4%B8%BAC%20%2B%2B%E5%92%8CC%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[const char*，char const*，char* const 的区别和联系 1.const char 是指向常量的指针 char2.char const 是指向常量的指针 char3.char* const 是指向（可变）的常量指针 char换句话说，1和2是相同的。 所以将const将类型放在右侧，这样可以使类型的位置保持一致并且易于记忆。 还有更麻烦的语法细节以后再深究吧，链接再这里：const int vs. int const as function parameter in C++ and C]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C++ struct和class的区别]]></title>
     <url>%2F2019%2F11%2F13%2FC%2B%2B%20struct%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[在C++中我们可以看到struct和class的区别并不是很大，两者之间有很大的相似性。那么为什么还要保留struct,这是因为C++是向下兼容的，因此C++中保留了很多C的东西。 一.看一下C和C++中的struct1.struct的定义struct A { int a; int b; //成员列表 }; 注意：因为struct是一种数据类型，那么就肯定不能定义函数，所以在面向c的过程中，struct不能包含任何函数。否则编译器会报错 面向过程的编程认为，数据和数据操作是分开的。然而当struct进入面向对象的c++时，其特性也有了新发展，就拿上面的错误函数来说，在c++中就能运行，因为在c++中认为数据和数据对象是一个整体，不应该分开，这就是struct在c和c++两个时代的差别。 在C++中struct得到了很大的扩充： 1.struct可以包括成员函数 2.struct可以实现继承 3.struct可以实现多态 二.strcut和class的区别1.默认的继承访问权。 class默认的是private,strcut默认的是public。 struct A { int a; }; struct B: A { int b; }; 例如上边的代码，strcut B就是公有继承（public）的struct A。如果将strcut变为 class 那么将会是私有继承(private)这里就不做展示了。所以我们在写类的时候都会显示的写出是公有继承还是私有继承 当然，到底默认是public继承还是private继承，取决于子类而不是基类。我的意思是，struct可以继承class，同样class也可以继承struct，那么默认的继承访问权限是看子类到底是用的struct还是class。如下： struct A { int a; }; struct B: A //公有继承 { int b; }; class C: A //私有继承 { int c }; 2.默认访问权限： struct作为数据结构的实现体，它默认的数据访问控制是public的，而class作为对象的实现体，它默认的成员变量访问控制是private的。 可以在类外访问成员变量，所以struct默认是共有的 struct A { int a; }; int main() { A n; n.a = 10; return 0; } class 在内外无法访问私有变量 class B { int b; }; int main() { B n1; n1.b = 10; return 0; } 3.定义模板参数 “class”这个关键字还用于定义模板参数，就像“typename”。但关键字“struct”不用于定义模板参数 从上面的区别，我们可以看出，struct更适合看成是一个数据结构的实现体，class更适合看成是一个对象的实现体。 4.class和struct在使用大括号{ }上的区别 关于使用大括号初始化 1.）class和struct如果定义了构造函数的话，都不能用大括号进行初始化2.）如果没有定义构造函数，struct可以用大括号初始化。3.）如果没有定义构造函数，且所有成员变量全是public的话，class可以用大括号初始化。 &emsp;&emsp;虽然感觉struct是多余的，但考虑到“对c兼容”就将struct保留了下来，并做了一些扩展使其更适合面向对象，所以c++中的struct再也不是c中的那个了。&emsp;&emsp;两者最大的区别就在于思想上，c语言编程单位是函数，语句是程序的基本单元。而C++语言的编程单位是类。从c到c++的设计有过程设计为中心向以数据组织为中心转移。]]></content>
