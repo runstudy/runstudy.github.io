@@ -363,7 +363,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        902
+                        893
                     </div>
                     
 
@@ -385,8 +385,7 @@
 <p>在C++中我们可以看到struct和class的区别并不是很大，两者之间有很大的相似性。那么为什么还要保留struct,这是因为C++是向下兼容的，因此C++中保留了很多C的东西。</p>
 <hr>
 <a id="more"></a>
-<h2 id="一-看一下C和C-中的struct"><a href="#一-看一下C和C-中的struct" class="headerlink" title="一.看一下C和C++中的struct"></a>一.看一下C和C++中的struct</h2><h3 id="1-struct的定义"><a href="#1-struct的定义" class="headerlink" title="1.struct的定义"></a>1.struct的定义</h3><pre class="line-numbers language-cpp"><code class="language-cpp">
-<span class="token keyword">struct</span> A
+<h2 id="一-看一下C和C-中的struct"><a href="#一-看一下C和C-中的struct" class="headerlink" title="一.看一下C和C++中的struct"></a>一.看一下C和C++中的struct</h2><h3 id="1-struct的定义"><a href="#1-struct的定义" class="headerlink" title="1.struct的定义"></a>1.struct的定义</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> A
 <span class="token punctuation">{</span>
 
     <span class="token keyword">int</span> a<span class="token punctuation">;</span>
@@ -395,8 +394,7 @@
 
     <span class="token comment" spellcheck="true">//成员列表</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><font color="#ff0000">注意：因为struct是一种数据类型，那么就肯定不能定义函数，所以在面向c的过程中，struct不能包含任何函数。否则编译器会报错</font><br></p>
 </blockquote>
@@ -412,9 +410,7 @@
 <h2 id="二-strcut和class的区别"><a href="#二-strcut和class的区别" class="headerlink" title="二.strcut和class的区别"></a>二.strcut和class的区别</h2><h3 id="1-默认的继承访问权。"><a href="#1-默认的继承访问权。" class="headerlink" title="1.默认的继承访问权。"></a>1.默认的继承访问权。</h3><blockquote>
 <p>class默认的是private,strcut默认的是public。</p>
 </blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
-
-<span class="token keyword">struct</span> A
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> A
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> a<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -423,17 +419,14 @@
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>例如上边的代码，strcut B就是公有继承（public）的struct A。如果将strcut变为 class 那么将会是私有继承(private)这里就不做展示了。所以我们在写类的时候都会显示的写出是公有继承还是私有继承</p>
 </blockquote>
 <blockquote>
 <p>当然，到底默认是public继承还是private继承，取决于子类而不是基类。我的意思是，struct可以继承class，同样class也可以继承struct，那么默认的继承访问权限是看子类到底是用的struct还是class。如下：</p>
 </blockquote>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
-
-<span class="token keyword">struct</span> A
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> A
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> a<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -447,8 +440,7 @@
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> c
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-默认访问权限："><a href="#2-默认访问权限：" class="headerlink" title="2.默认访问权限："></a>2.默认访问权限：</h3><blockquote>
 <p>struct作为数据结构的实现体，它默认的数据访问控制是public的，而class作为对象的实现体，它默认的成员变量访问控制是private的。</p>
 </blockquote>
@@ -481,7 +473,16 @@
 <h3 id="3-定义模板参数"><a href="#3-定义模板参数" class="headerlink" title="3.定义模板参数"></a>3.定义模板参数</h3><blockquote>
 <p>“class”这个关键字还用于定义模板参数，就像“typename”。但关键字“struct”不用于定义模板参数</p>
 </blockquote>
-<font size="3"><strong><br>从上面的区别，我们可以看出，struct更适合看成是一个数据结构的实现体，class更适合看成是一个对象的实现体。<br></strong><br></font><br><br><br>###  4.class和struct在使用大括号{ }上的区别<br><br>&gt;* 关于使用大括号初始化<br>&gt;<br>&gt;&gt;1.）class和struct如果定义了构造函数的话，都不能用大括号进行初始化<br>&gt;&gt;2.）如果没有定义构造函数，struct可以用大括号初始化。<br>&gt;&gt;3.）如果没有定义构造函数，且所有成员变量全是public的话，class可以用大括号初始化。<br><br><font size="3"><strong><br>&emsp;&emsp;虽然感觉struct是多余的，但考虑到“对c兼容”就将struct保留了下来，并做了一些扩展使其更适合面向对象，所以c++中的struct再也不是c中的那个了。<br>&emsp;&emsp;两者最大的区别就在于思想上，c语言编程单位是函数，语句是程序的基本单元。而C++语言的编程单位是类。从c到c++的设计有过程设计为中心向以数据组织为中心转移。<br></strong></font>
+<p><font size="3"><strong><br>从上面的区别，我们可以看出，struct更适合看成是一个数据结构的实现体，class更适合看成是一个对象的实现体。<br></strong><br></font><br></p>
+<h3 id="4-class和struct在使用大括号-上的区别"><a href="#4-class和struct在使用大括号-上的区别" class="headerlink" title="4.class和struct在使用大括号{ }上的区别"></a>4.class和struct在使用大括号{ }上的区别</h3><blockquote>
+<ul>
+<li>关于使用大括号初始化  <blockquote>
+<p>1.）class和struct如果定义了构造函数的话，都不能用大括号进行初始化<br>2.）如果没有定义构造函数，struct可以用大括号初始化。<br>3.）如果没有定义构造函数，且所有成员变量全是public的话，class可以用大括号初始化。</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p><font size="3"><strong><br>&emsp;&emsp;虽然感觉struct是多余的，但考虑到“对c兼容”就将struct保留了下来，并做了一些扩展使其更适合面向对象，所以c++中的struct再也不是c中的那个了。<br>&emsp;&emsp;两者最大的区别就在于思想上，c语言编程单位是函数，语句是程序的基本单元。而C++语言的编程单位是类。从c到c++的设计有过程设计为中心向以数据组织为中心转移。<br></strong></font><br></p>
 
             </div>
             <hr>
