@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C++ struct和class的区别]]></title>
+    <url>%2F2019%2F11%2F13%2FC%2B%2B%20struct%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[在C++中我们可以看到struct和class的区别并不是很大，两者之间有很大的相似性。那么为什么还要保留struct,这是因为C++是向下兼容的，因此C++中保留了很多C的东西。 一.看一下C和C++中的struct1.struct的定义 struct A { int a; int b; //成员列表 }; 注意：因为struct是一种数据类型，那么就肯定不能定义函数，所以在面向c的过程中，struct不能包含任何函数。否则编译器会报错 面向过程的编程认为，数据和数据操作是分开的。然而当struct进入面向对象的c++时，其特性也有了新发展，就拿上面的错误函数来说，在c++中就能运行，因为在c++中认为数据和数据对象是一个整体，不应该分开，这就是struct在c和c++两个时代的差别。 在C++中struct得到了很大的扩充： 1.struct可以包括成员函数 2.struct可以实现继承 3.struct可以实现多态 二.strcut和class的区别1.默认的继承访问权。 class默认的是private,strcut默认的是public。 struct A { int a; }; struct B: A { int b; }; 例如上边的代码，strcut B就是公有继承（public）的struct A。如果将strcut变为 class 那么将会是私有继承(private)这里就不做展示了。所以我们在写类的时候都会显示的写出是公有继承还是私有继承 当然，到底默认是public继承还是private继承，取决于子类而不是基类。我的意思是，struct可以继承class，同样class也可以继承struct，那么默认的继承访问权限是看子类到底是用的struct还是class。如下： struct A { int a; }; struct B: A //公有继承 { int b; }; class C: A //私有继承 { int c }; 2.默认访问权限： struct作为数据结构的实现体，它默认的数据访问控制是public的，而class作为对象的实现体，它默认的成员变量访问控制是private的。 可以在类外访问成员变量，所以struct默认是共有的 struct A { int a; }; int main() { A n; n.a = 10; return 0; } class 在内外无法访问私有变量 class B { int b; }; int main() { B n1; n1.b = 10; return 0; } 3.定义模板参数 “class”这个关键字还用于定义模板参数，就像“typename”。但关键字“struct”不用于定义模板参数 从上面的区别，我们可以看出，struct更适合看成是一个数据结构的实现体，class更适合看成是一个对象的实现体。### 4.class和struct在使用大括号{ }上的区别&gt;* 关于使用大括号初始化&gt;&gt;&gt;1.）class和struct如果定义了构造函数的话，都不能用大括号进行初始化&gt;&gt;2.）如果没有定义构造函数，struct可以用大括号初始化。&gt;&gt;3.）如果没有定义构造函数，且所有成员变量全是public的话，class可以用大括号初始化。&emsp;&emsp;虽然感觉struct是多余的，但考虑到“对c兼容”就将struct保留了下来，并做了一些扩展使其更适合面向对象，所以c++中的struct再也不是c中的那个了。&emsp;&emsp;两者最大的区别就在于思想上，c语言编程单位是函数，语句是程序的基本单元。而C++语言的编程单位是类。从c到c++的设计有过程设计为中心向以数据组织为中心转移。]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C++ rand 与 srand 的用法]]></title>
     <url>%2F2019%2F11%2F12%2FC%2B%2Brand%20%E4%B8%8E%20srand%20%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[C++ 可以用rand 与 srand创建随机数 计算机的随机数都是由伪随机数，即是由小M多项式序列生成的，其中产生每个小序列都有一个初始值，即随机种子。（注意： 小M多项式序列的周期是65535，即每次利用一个随机种子生成的随机数的周期是65535，当你取得65535个随机数后它们又重复出现了。） 我们知道 rand() 函数可以用来产生随机数，但是这不是真正意义上的随机数，是一个伪随机数，是根据一个数（我们可以称它为种子）为基准以某个递推公式推算出来的一系列数，当这系列数很大的时候，就符合正态公布，从而相当于产生了随机数，但这不是真正的随机数，当计算机正常开机后，这个种子的值是定了的，除非你破坏了系统。 1.rand()功能: 随机数发生器 用法: int rand(void) 所在头文件: stdlib.h rand() 的内部实现是用线性同余法做的，它不是真的随机数，因其周期特别长，故在一定的范围里可看成是随机的。 rand() 返回一随机数值的范围在 0 至 RAND_MAX 间。RAND_MAX 的范围最少是在 32767 之间(int)。用 unsigned int 双字节是 65535，四字节是 4294967295 的整数范围。0~RAND_MAX 每个数字被选中的机率是相同的。 用户未设定随机数种子时，系统默认的随机数种子为 1。 rand() 产生的是伪随机数字，每次执行时是相同的; 若要不同, 用函数 srand() 初始化它。 2.srand()功能: 初始化随机数发生器 用法: void srand(unsigned int seed) 所在头文件: stdlib.h srand() 用来设置 rand() 产生随机数时的随机数种子。参数 seed 必须是个整数，如果每次 seed 都设相同值，rand() 所产生的随机数值每次就会一样。 3.使用当前时钟作为随机数种子rand() 产生的随机数在每次运行的时候都是与上一次相同的。若要不同, 用函数 srand() 初始化它。可以利用 srand((unsigned int)(time(NULL)) 的方法，产生不同的随机数种子，因为每一次运行程序的时间是不同的。 4.产生随机数的用法1) 给srand()提供一个种子，它是一个unsigned int类型；2) 调用rand()，它会根据提供给srand()的种子值返回一个随机数(在0到RAND_MAX之间)；3) 根据需要多次调用rand()，从而不间断地得到新的随机数；4) 无论什么时候，都可以给srand()提供一个新的种子，从而进一步”随机化”rand()的输出结果。0~RAND_MAX 之间的随机数程序 #include &lt;iostream> #include &lt;stdlib.h> #include &lt;time.h> using namespace std; int main() { srand((unsigned)time(NULL)); for(int i = 0; i &lt; 10;i++ ) cout &lt;&lt; rand() &lt;&lt; '/t'; cout &lt;&lt; endl; return 0; }]]></content>

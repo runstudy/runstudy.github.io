@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建进阶, 瓦尔登湖">
+    <meta name="keywords" content="C++ struct和class的区别, 瓦尔登湖">
     <meta name="description" content="
-让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffold">
+在C++中我们可以看到struct和class的区别并不是很大，两者之间有很大的相似性。那么为什么还要保留struct,这是因为C++是向下兼容的，因此C++中保留了很多C的东西。
+
+
+一.看一下C和C++中的struct1.struct">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>博客搭建进阶 | 瓦尔登湖</title>
+    <title>C++ struct和class的区别 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -212,13 +215,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        博客搭建进阶
+                        C++ struct和class的区别
                     </div>
                 </div>
             </div>
@@ -329,8 +332,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/博客/" target="_blank">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
                     </div>
@@ -341,8 +344,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/娱乐/" class="post-category" target="_blank">
-                                娱乐
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                计算机
                             </a>
                         
                     </div>
@@ -353,21 +356,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-31
+                    2019-11-13
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        213
+                        902
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -379,50 +382,107 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h3 id="让每个新建的文章都自动添加-Front-matter"><a href="#让每个新建的文章都自动添加-Front-matter" class="headerlink" title="让每个新建的文章都自动添加 Front-matter"></a><strong>让每个新建的文章都自动添加 Front-matter</strong></h3><p>每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置：</p>
-<pre class="line-numbers language-JavaScript"><code class="language-JavaScript">---
-title: {{ title }}
-date: {{ date }}
-author: {{ author }}
-tags: {{ tags }}
-categories: {{ categories }}
-img: {{ img }}
-top: {{ top }}
-password: {{ password }}
-summary: {{ summary }}
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>之后再创建文章时，文章上方会自动添加这些字段</p>
+<p>在C++中我们可以看到struct和class的区别并不是很大，两者之间有很大的相似性。那么为什么还要保留struct,这是因为C++是向下兼容的，因此C++中保留了很多C的东西。</p>
 <hr>
-<pre><code>main()
-{
-    int a,b,c,g,d,h;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    g=a;c=b;
-    if(a&lt;b)
-    {
-        a^=b;    b^=a;    a^=b;
-    }
-    if(g&lt;c)
-    {
-        g^=c;    g^=c;    g^=c;
-    }
-    yueshu(a,b);
-    putchar(&#39;\n&#39;);
-    h=gcd(g,c);
-    printf(&quot;%d\n&quot;,h);
-}
-</code></pre><pre class="line-numbers language-C"><code class="language-C">main()
-{
-    int a,b,c,g,d,h;
-    scanf("%d%d",&a,&b);
-    g=a;c=b;
-    if(a<b) { a^="b;" b^="a;" } if(g<c) g^="c;" yueshu(a,b); putchar('\n'); h="gcd(g,c);" printf("%d\n",h); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></b)></code></pre>
-<pre class="line-numbers language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'window loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="post-ejs，这个可以修改加密的插件"><a href="#post-ejs，这个可以修改加密的插件" class="headerlink" title="post.ejs，这个可以修改加密的插件"></a>post.ejs，这个可以修改加密的插件</h2>
+<a id="more"></a>
+<h2 id="一-看一下C和C-中的struct"><a href="#一-看一下C和C-中的struct" class="headerlink" title="一.看一下C和C++中的struct"></a>一.看一下C和C++中的struct</h2><h3 id="1-struct的定义"><a href="#1-struct的定义" class="headerlink" title="1.struct的定义"></a>1.struct的定义</h3><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">struct</span> A
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//成员列表</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><font color="#ff0000">注意：因为struct是一种数据类型，那么就肯定不能定义函数，所以在面向c的过程中，struct不能包含任何函数。否则编译器会报错</font><br></p>
+</blockquote>
+<blockquote>
+<p>面向过程的编程认为，数据和数据操作是分开的。然而当struct进入面向对象的c++时，其特性也有了新发展，就拿上面的错误函数来说，在c++中就能运行，因为在c++中认为数据和数据对象是一个整体，不应该分开，这就是struct在c和c++两个时代的差别。</p>
+<p><strong><br>在C++中struct得到了很大的扩充：</strong></p>
+<font color="#ff0000">
+
+<p>1.struct可以包括成员函数</p>
+<p>2.struct可以实现继承</p>
+<p>3.struct可以实现多态</p></font><br><br><p></p>
+</blockquote>
+<h2 id="二-strcut和class的区别"><a href="#二-strcut和class的区别" class="headerlink" title="二.strcut和class的区别"></a>二.strcut和class的区别</h2><h3 id="1-默认的继承访问权。"><a href="#1-默认的继承访问权。" class="headerlink" title="1.默认的继承访问权。"></a>1.默认的继承访问权。</h3><blockquote>
+<p>class默认的是private,strcut默认的是public。</p>
+</blockquote>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+
+<span class="token keyword">struct</span> A
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> B<span class="token operator">:</span> A
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>例如上边的代码，strcut B就是公有继承（public）的struct A。如果将strcut变为 class 那么将会是私有继承(private)这里就不做展示了。所以我们在写类的时候都会显示的写出是公有继承还是私有继承</p>
+</blockquote>
+<blockquote>
+<p>当然，到底默认是public继承还是private继承，取决于子类而不是基类。我的意思是，struct可以继承class，同样class也可以继承struct，那么默认的继承访问权限是看子类到底是用的struct还是class。如下：</p>
+</blockquote>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+
+<span class="token keyword">struct</span> A
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> B<span class="token operator">:</span> A   <span class="token comment" spellcheck="true">//公有继承</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token operator">:</span> A    <span class="token comment" spellcheck="true">//私有继承</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> c
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-默认访问权限："><a href="#2-默认访问权限：" class="headerlink" title="2.默认访问权限："></a>2.默认访问权限：</h3><blockquote>
+<p>struct作为数据结构的实现体，它默认的数据访问控制是public的，而class作为对象的实现体，它默认的成员变量访问控制是private的。</p>
+</blockquote>
+<blockquote>
+<p>可以在类外访问成员变量，所以struct默认是共有的</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> A
+<span class="token punctuation">{</span>
+   <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   A n<span class="token punctuation">;</span>
+   n<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>class 在内外无法访问私有变量</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">B</span>
+<span class="token punctuation">{</span>
+   <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   B n1<span class="token punctuation">;</span>
+   n1<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h3 id="3-定义模板参数"><a href="#3-定义模板参数" class="headerlink" title="3.定义模板参数"></a>3.定义模板参数</h3><blockquote>
+<p>“class”这个关键字还用于定义模板参数，就像“typename”。但关键字“struct”不用于定义模板参数</p>
+</blockquote>
+<font size="3"><strong><br>从上面的区别，我们可以看出，struct更适合看成是一个数据结构的实现体，class更适合看成是一个对象的实现体。<br></strong><br></font><br><br><br>###  4.class和struct在使用大括号{ }上的区别<br><br>&gt;* 关于使用大括号初始化<br>&gt;<br>&gt;&gt;1.）class和struct如果定义了构造函数的话，都不能用大括号进行初始化<br>&gt;&gt;2.）如果没有定义构造函数，struct可以用大括号初始化。<br>&gt;&gt;3.）如果没有定义构造函数，且所有成员变量全是public的话，class可以用大括号初始化。<br><br><font size="3"><strong><br>&emsp;&emsp;虽然感觉struct是多余的，但考虑到“对c兼容”就将struct保留了下来，并做了一些扩展使其更适合面向对象，所以c++中的struct再也不是c中的那个了。<br>&emsp;&emsp;两者最大的区别就在于思想上，c语言编程单位是函数，语句是程序的基本单元。而C++语言的编程单位是类。从c到c++的设计有过程设计为中心向以数据组织为中心转移。<br></strong></font>
+
             </div>
             <hr>
 
@@ -461,34 +521,52 @@ summary: {{ summary }}
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/02/浙大考研/">
+                <a href="/2019/11/13/C++ struct和class的区别/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="浙大考研">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C++ struct和class的区别">
                         
-                        <span class="card-title">浙大考研</span>
+                        <span class="card-title">C++ struct和class的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+在C++中我们可以看到struct和class的区别并不是很大，两者之间有很大的相似性。那么为什么还要保留struct,这是因为C++是向下兼容的，因此C++中保留了很多C的东西。
+
+
+一.看一下C和C++中的struct1.struct
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-13
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -500,33 +578,47 @@ summary: {{ summary }}
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/31/sss/">
+                <a href="/2019/11/12/C++rand 与 srand 的用法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++ rand 与 srand 的用法">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">C++ rand 与 srand 的用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &lt;!DOCTYPE HTML&gt;
-                                            轻量级滚动动画JavaScript库aos.js | 闪烁之狐                       
+                            
+ C++ 可以用rand 与 srand创建随机数 
+
+计算机的随机数都是由伪随机数，即是由小M多项式序列生成的，其中产生每个小序列都有一个初始值，即随机种子。（注意： 小M多项式序列的周期是65535，即每次利用一个随机种子生成的随机数
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
