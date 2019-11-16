@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[const int与int const作为C ++和C中的函数参数]]></title>
     <url>%2F2019%2F11%2F13%2Fconst%20int%E4%B8%8Eint%20const%E4%BD%9C%E4%B8%BAC%20%2B%2B%E5%92%8CC%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%2F</url>
-    <content type="text"><![CDATA[const char*，char const*，char* const 的区别和联系 1.const char 是指向常量的指针 char2.char const 是指向常量的指针 char3.char* const 是指向（可变）的常量指针 char换句话说，1和2是相同的。 所以将const将类型放在右侧，这样可以使类型的位置保持一致并且易于记忆。 还有更麻烦的语法细节以后再深究吧，链接再这里：const int vs. int const as function parameter in C++ and C]]></content>
+    <content type="text"><![CDATA[const char*，char const*，char* const 的区别和联系 1.const char* 是指向常量的指针 char2.char const* 是指向常量的指针 char3.char* const 是指向（可变）的常量指针 char换句话说，1和2是相同的。 所以将const将类型放在右侧，这样可以使类型的位置保持一致并且易于记忆。 还有更麻烦的语法细节以后再深究吧，链接再这里：const int vs. int const as function parameter in C++ and C]]></content>
       <categories>
         <category>计算机</category>
       </categories>
