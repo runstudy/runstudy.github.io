@@ -4,9 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建进阶, 瓦尔登湖">
+    <meta name="keywords" content="C++模板别名, 瓦尔登湖">
     <meta name="description" content="
-让每个新建的文章都自动添加 Front-matter每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffold">
+在 c++ 中进行模板别名有很多是用 #define 实现的，这样可以达到要求，但是在 VisualStudio 2019 中，使用这种方法后，定义的变量在类视图中不能显示出来，通过使用 c++ 标准中的定义可以达到要求。
+
+有这么一个 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>博客搭建进阶 | 瓦尔登湖</title>
+    <title>C++模板别名 | 瓦尔登湖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -212,13 +214,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        博客搭建进阶
+                        C++模板别名
                     </div>
                 </div>
             </div>
@@ -329,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/博客/" target="_blank">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
                     </div>
@@ -341,8 +343,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/娱乐/" class="post-category" target="_blank">
-                                娱乐
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                计算机
                             </a>
                         
                     </div>
@@ -353,14 +355,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-31
+                    2019-11-19
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        213
+                        317
                     </div>
                     
 
@@ -379,50 +381,31 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h3 id="让每个新建的文章都自动添加-Front-matter"><a href="#让每个新建的文章都自动添加-Front-matter" class="headerlink" title="让每个新建的文章都自动添加 Front-matter"></a><strong>让每个新建的文章都自动添加 Front-matter</strong></h3><p>每创建一篇文章都要在上面去加标签等字段，如果后期功能多的话，可能会要加很多字段，比较麻烦，这里有个比较相对容易的方式不用每次都去添加那些字段 首先打开文件 ~/blog/scaffolds/post.md ,进行如下配置：</p>
-<pre class="line-numbers language-JavaScript"><code class="language-JavaScript">---
-title: {{ title }}
-date: {{ date }}
-author: {{ author }}
-tags: {{ tags }}
-categories: {{ categories }}
-img: {{ img }}
-top: {{ top }}
-password: {{ password }}
-summary: {{ summary }}
----
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>之后再创建文章时，文章上方会自动添加这些字段</p>
+<p>在 c++ 中进行模板别名有很多是用 #define 实现的，这样可以达到要求，但是在 VisualStudio 2019 中，使用这种方法后，定义的变量在类视图中不能显示出来，通过使用 c++ 标准中的定义可以达到要求。</p>
 <hr>
-<pre><code>main()
-{
-    int a,b,c,g,d,h;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    g=a;c=b;
-    if(a&lt;b)
-    {
-        a^=b;    b^=a;    a^=b;
-    }
-    if(g&lt;c)
-    {
-        g^=c;    g^=c;    g^=c;
-    }
-    yueshu(a,b);
-    putchar(&#39;\n&#39;);
-    h=gcd(g,c);
-    printf(&quot;%d\n&quot;,h);
-}
-</code></pre><pre class="line-numbers language-C"><code class="language-C">main()
-{
-    int a,b,c,g,d,h;
-    scanf("%d%d",&a,&b);
-    g=a;c=b;
-    if(a<b) { a^="b;" b^="a;" } if(g<c) g^="c;" yueshu(a,b); putchar('\n'); h="gcd(g,c);" printf("%d\n",h); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></b)></code></pre>
-<pre class="line-numbers language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'window loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="post-ejs，这个可以修改加密的插件"><a href="#post-ejs，这个可以修改加密的插件" class="headerlink" title="post.ejs，这个可以修改加密的插件"></a>post.ejs，这个可以修改加密的插件</h2>
+<p>有这么一个 listnode 的模板类：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">struct</span> listnode <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//列表节点模板类（以双向链表形式实现）</span>
+<span class="token comment" spellcheck="true">// 成员</span>
+    T data<span class="token punctuation">;</span> listnode_posi<span class="token operator">&lt;</span>T<span class="token operator">></span> pred<span class="token punctuation">;</span> listnode_posi<span class="token operator">&lt;</span>T<span class="token operator">></span> succ<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数值、前驱、后继</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>现在想用 listnode_posi 作为指向 Listnode 的指针，一般是用 #define 这样定义的：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> listnode_posi(T) listnode&lt;T>*</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这种方法没有报错，也没有对以后产生问题<br>但是，当我在其他地方使用 listnode_posi(T) 后，比如我定义这样一个模板类：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">emplate <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">class</span> <span class="token class-name">list</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//列表模板类</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> _size<span class="token punctuation">;</span> <span class="token function">listnode_posi</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> header<span class="token punctuation">;</span> <span class="token function">listnode_posi</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> trailer<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//规模、头哨兵、尾哨兵</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 VS 的<strong>类视图-变量</strong>中在 list\&lt;T> 没有 heade 和 trailer 变量，虽然对于程序是没有影响的</p>
+<p>为了解决这个问题，需要在对 listnode\&lt;T> 别名时使用 c++ 标准定义：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">struct</span> listnode<span class="token punctuation">;</span>
+<span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">using</span> listnode_posi <span class="token operator">=</span> <span class="token keyword">struct</span> listnode<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>注意，这两句都不能少，至于为什么我现在还不知道……</p>
+
             </div>
             <hr>
 
@@ -461,34 +444,51 @@ summary: {{ summary }}
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/02/浙大考研/">
+                <a href="/2019/11/19/C++模板别名/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="浙大考研">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="C++模板别名">
                         
-                        <span class="card-title">浙大考研</span>
+                        <span class="card-title">C++模板别名</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+在 c++ 中进行模板别名有很多是用 #define 实现的，这样可以达到要求，但是在 VisualStudio 2019 中，使用这种方法后，定义的变量在类视图中不能显示出来，通过使用 c++ 标准中的定义可以达到要求。
+
+有这么一个 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-19
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -500,33 +500,50 @@ summary: {{ summary }}
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/31/sss/">
+                <a href="/2019/11/19/C++11 关键字 Using/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="C++11 关键字 Using">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">C++11 关键字 Using</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &lt;!DOCTYPE HTML&gt;
-                                            轻量级滚动动画JavaScript库aos.js | 闪烁之狐                       
+                            
+C++里using关键字的用法
+
+使用小技巧来声明函数指针在 c++03 中, 函数指针要这么写:
+typedef void (*FunctionPtr)();
+
+这个声明读起来相当的费劲, C 语言的初学者会很难理解上面的 typede
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            SSM
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机/" class="post-category" target="_blank">
+                                    计算机
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
