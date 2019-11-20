@@ -362,7 +362,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        313
+                        317
                     </div>
                     
 
@@ -383,24 +383,24 @@
                 <hr>
 <p>在 c++ 中进行模板别名有很多是用 #define 实现的，这样可以达到要求，但是在 VisualStudio 2019 中，使用这种方法后，定义的变量在类视图中不能显示出来，通过使用 c++ 标准中的定义可以达到要求。</p>
 <hr>
-<p>有这么一个 listnode 的模板类：</p>
+<p>有这么一个 <strong><em>listnode</em></strong> 的模板类：</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">struct</span> listnode <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//列表节点模板类（以双向链表形式实现）</span>
 <span class="token comment" spellcheck="true">// 成员</span>
     T data<span class="token punctuation">;</span> listnode_posi<span class="token operator">&lt;</span>T<span class="token operator">></span> pred<span class="token punctuation">;</span> listnode_posi<span class="token operator">&lt;</span>T<span class="token operator">></span> succ<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数值、前驱、后继</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>现在想用 listnode_posi 作为指向 Listnode 的指针，一般是用 #define 这样定义的：</p>
+<p>现在想用 <strong><em>listnode_posi</em></strong> 作为指向 <strong><em>Listnode</em></strong> 的指针，一般是用 <strong><em>#define</em></strong> 这样定义的：</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> listnode_posi(T) listnode&lt;T>*</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这种方法没有报错，也没有对以后产生问题<br>但是，当我在其他地方使用 listnode_posi(T) 后，比如我定义这样一个模板类：</p>
+<p>这种方法没有报错，也没有对以后产生问题<br>但是，当我在其他地方使用 <strong><em>listnode_posi(T)</em></strong> 后，比如我定义这样一个模板类：</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">class</span> <span class="token class-name">list</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//列表模板类</span>
 
 <span class="token keyword">private</span><span class="token operator">:</span>
     <span class="token keyword">int</span> _size<span class="token punctuation">;</span> <span class="token function">listnode_posi</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> header<span class="token punctuation">;</span> <span class="token function">listnode_posi</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> trailer<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//规模、头哨兵、尾哨兵</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在 VS 的<strong>类视图-变量</strong>中在 list\<t> 没有 heade 和 trailer 变量，虽然对于程序是没有影响的</t></p>
-<p>为了解决这个问题，需要在对 listnode\<t> 别名时使用 c++ 标准定义：</t></p>
+<p>在 VS 的<strong>类视图-变量</strong>中在 <strong><em>list&lt;T></em></strong> 没有 <strong><em>header</em></strong> 和 <strong><em>trailer</em></strong> 变量，虽然对于程序是没有影响的</p>
+<p>为了解决这个问题，需要在对 <strong><em>listnode&lt;T></em></strong> 别名时使用 c++ 标准定义：</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">struct</span> listnode<span class="token punctuation">;</span>
 <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">using</span> listnode_posi <span class="token operator">=</span> <span class="token keyword">struct</span> listnode<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -459,12 +459,12 @@
                     <div class="summary block-with-text">
                         
                             
-C++里using关键字的用法
+C++ 里 using 关键字的用法以及和 typedef 的区别：转自： Bitdewy博客
 
 使用小技巧来声明函数指针在 c++03 中, 函数指针要这么写:
 typedef void (*FunctionPtr)();
 
-这个声明读起来相当的费劲, C 语言的初学者会很难理解上面的 typede
+这个声明读
                         
                     </div>
                     <div class="publish-info">
