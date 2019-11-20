@@ -362,7 +362,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        317
+                        313
                     </div>
                     
 
@@ -399,8 +399,8 @@
     <span class="token keyword">int</span> _size<span class="token punctuation">;</span> <span class="token function">listnode_posi</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> header<span class="token punctuation">;</span> <span class="token function">listnode_posi</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> trailer<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//规模、头哨兵、尾哨兵</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在 VS 的<strong>类视图-变量</strong>中在 list\&lt;T> 没有 heade 和 trailer 变量，虽然对于程序是没有影响的</p>
-<p>为了解决这个问题，需要在对 listnode\&lt;T> 别名时使用 c++ 标准定义：</p>
+<p>在 VS 的<strong>类视图-变量</strong>中在 list\<t> 没有 heade 和 trailer 变量，虽然对于程序是没有影响的</t></p>
+<p>为了解决这个问题，需要在对 listnode\<t> 别名时使用 c++ 标准定义：</t></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">struct</span> listnode<span class="token punctuation">;</span>
 <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span> <span class="token keyword">using</span> listnode_posi <span class="token operator">=</span> <span class="token keyword">struct</span> listnode<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -444,61 +444,7 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2019/11/19/C++模板别名/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="C++模板别名">
-                        
-                        <span class="card-title">C++模板别名</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-在 c++ 中进行模板别名有很多是用 #define 实现的，这样可以达到要求，但是在 VisualStudio 2019 中，使用这种方法后，定义的变量在类视图中不能显示出来，通过使用 c++ 标准中的定义可以达到要求。
-
-有这么一个 
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/计算机/" class="post-category" target="_blank">
-                                    计算机
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/11/19/C++11 关键字 Using/">
                     <div class="card-image">
@@ -522,9 +468,9 @@ typedef void (*FunctionPtr)();
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -544,6 +490,43 @@ typedef void (*FunctionPtr)();
                         <span class="chip bg-color">C++</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/16/111/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="111">
+                        
+                        <span class="card-title">111</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            SSM
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
